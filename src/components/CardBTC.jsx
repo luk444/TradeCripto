@@ -1,40 +1,38 @@
-// CardBTC.jsx
 import React, { useState, useEffect } from 'react';
-import Single from '../assets/single.png';
+import single from '../assets/single.png';
 import Modal from './Modal';
 
 const CardBTC = ({ title, currency, buttonColor, onTradeClick }) => {
-  const [cryptoToPeso, setCryptoToPeso] = useState(0);
+  const [cryptoToARS, setCryptoToARS] = useState(0);
   const [amount, setAmount] = useState(0);
   const [pesoValue, setPesoValue] = useState(0);
 
   useEffect(() => {
-    const fetchExchangeRate = async () => {
+    const fetchExchangeRateBTCToARS = async () => {
       try {
-        // Utiliza la API de Binance para la conversión de BTC
-        const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ars');
         const data = await response.json();
-        setCryptoToPeso(data.price);
+        setCryptoToARS(data.bitcoin.ars);
       } catch (error) {
-        console.error('Error fetching exchange rate:', error);
+        console.error('Error fetching BTC to ARS exchange rate:', error);
       }
     };
 
-    fetchExchangeRate();
+    fetchExchangeRateBTCToARS();
   }, []);
 
   useEffect(() => {
-    setPesoValue(amount * cryptoToPeso);
-  }, [amount, cryptoToPeso]);
+    setPesoValue(amount * cryptoToARS);
+  }, [amount, cryptoToARS]);
 
   const handleTradeClick = () => {
-    onTradeClick(); // Llamamos a la función proporcionada por Cards.jsx
-    // En lugar de abrir directamente el modal aquí, pasamos la información necesaria a Cards.jsx
+    onTradeClick();
+    // Aquí puedes realizar cualquier acción adicional al hacer clic en "Tradear"
   };
 
   return (
     <div className='w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-      <img className='w-20 mx-auto mt-[-3rem] bg-white' src={Single} alt="/" />
+      <img className='w-20 mx-auto mt-[-3rem] bg-white' src={single} alt="/" />
       <h2 className='text-2xl font-bold text-center py-8'>{title} Trade</h2>
       <p className='text-center text-4xl font-bold'>{currency}</p>
       <div className='text-center font-medium'>

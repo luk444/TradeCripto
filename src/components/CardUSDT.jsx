@@ -1,35 +1,33 @@
-// CardBTC.jsx
 import React, { useState, useEffect } from 'react';
 import triple from '../assets/triple.png';
 import Modal from './Modal';
 
-const CardBTC = ({ title, currency, buttonColor, onTradeClick }) => {
-  const [cryptoToPeso, setCryptoToPeso] = useState(0);
+const CardUSDT = ({ title, currency, buttonColor, onTradeClick }) => {
+  const [usdtToARSExchangeRate, setUsdtToARSExchangeRate] = useState(0);
   const [amount, setAmount] = useState(0);
   const [pesoValue, setPesoValue] = useState(0);
 
   useEffect(() => {
-    const fetchExchangeRate = async () => {
+    const fetchExchangeRateUSDToARS = async () => {
       try {
-        // Utiliza la API de Binance para la conversión de BTC
-        const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
+        const response = await fetch('https://open.er-api.com/v6/latest/USD');
         const data = await response.json();
-        setCryptoToPeso(data.price);
+        setUsdtToARSExchangeRate(data.rates.ARS);
       } catch (error) {
-        console.error('Error fetching exchange rate:', error);
+        console.error('Error fetching USDT to ARS exchange rate:', error);
       }
     };
 
-    fetchExchangeRate();
+    fetchExchangeRateUSDToARS();
   }, []);
 
   useEffect(() => {
-    setPesoValue(amount * cryptoToPeso);
-  }, [amount, cryptoToPeso]);
+    setPesoValue(amount * usdtToARSExchangeRate);
+  }, [amount, usdtToARSExchangeRate]);
 
   const handleTradeClick = () => {
-    onTradeClick(); // Llamamos a la función proporcionada por Cards.jsx
-    // En lugar de abrir directamente el modal aquí, pasamos la información necesaria a Cards.jsx
+    onTradeClick();
+    // Puedes realizar cualquier acción adicional al hacer clic en "Tradear"
   };
 
   return (
@@ -76,4 +74,4 @@ const CardBTC = ({ title, currency, buttonColor, onTradeClick }) => {
   );
 };
 
-export default CardBTC;
+export default CardUSDT;
