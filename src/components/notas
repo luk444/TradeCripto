@@ -1,0 +1,64 @@
+<div className='w-full bg-white py-16 px-4'>
+      <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
+        <img className='w-[500px] mx-auto my-4' src={Laptop} alt='/' />
+        <div className='flex flex-col justify-center'>
+          <p className='text-[#00df9a] font-bold '>DATA ANALYTICS DASHBOARD</p>
+          <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>Manage Data Analytics Centrally</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            molestiae delectus culpa hic assumenda, voluptate reprehenderit
+            dolore autem cum ullam sed odit perspiciatis. Doloribus quos velit,
+            eveniet ex deserunt fuga?
+          </p>
+          <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    import React from 'react';
+import Laptop from '../assets/laptop.jpg';
+
+const Analytics = () => {
+  return (
+    <div className='w-full bg-white py-16 px-4 text-black'>
+      <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
+        <img className='w-[500px] mx-auto my-4' src={Laptop} alt='/' />
+        <div className='w-full py-16 text-black px-4'>
+          <div className='max-w-[1240px] mx-auto grid lg:grid-cols-3'>
+            <div className='lg:col-span-2 my-4'>
+              <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
+                Optimiza tus Transacciones de Criptomonedas
+              </h1>
+              <p>Ingresa la cantidad de criptomonedas que posees para calcular la cantidad que recibirás en ARS.</p>
+            </div>
+            <div className='lg:col-span-2 my-4'>
+              <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
+                Proceso de Trading sin Esfuerzo
+              </h1>
+              <p>Simplemente haz clic en 'Trade' para la criptomoneda especificada, y se generará una dirección de billetera para tu transacción.</p>
+            </div>
+            <div className='lg:col-span-2 my-4'>
+              <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
+                Recibe tu Depósito en ARS
+              </h1>
+              <p>Luego, ingresa tu CVU/CBU/ALIAS para recibir el depósito en ARS.</p>
+            </div>
+            <div className='maaa'>
+              <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
+                Acreditacion inmediata!
+              </h1>
+              <p>Al instante que se valide la transaccion, veras reflejado el Deposito desde la Entidad "WLDC Trade"</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+  
+  
+};
+
+export default Analytics;

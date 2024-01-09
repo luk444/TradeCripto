@@ -19,16 +19,21 @@ const Cards = () => {
   };
 
   return (
-    <div className='w-full py-[10rem] px-4 bg-white'>
+    <body className='bg-greey-200'>
+      <section id="seccion3"><hr />
+      </section>
+        <div className='w-full py-[10rem] px-4 bg-white'>
       <div className='max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8'>
-        <CardBTC title="BTC" currency="BTC" buttonColor="#00df9a" onTradeClick={() => handleTradeClick('BTC')} />
-        <CardWLD title="WLD" currency="WLD" buttonColor="#00df9a" onTradeClick={() => handleTradeClick('WLD')} />
-        <CardUSDT title="USDT" currency="USDT" buttonColor="#00df9a" onTradeClick={() => handleTradeClick('USDT')} />
+        <CardBTC title="BTC" currency="BTC" buttonColor="#fff" onTradeClick={() => handleTradeClick('BTC')} />
+        <CardWLD title="WLD" currency="WLD" buttonColor="#fff" onTradeClick={() => handleTradeClick('WLD')} />
+        <CardUSDT title="USDT" currency="USDT" buttonColor="#fff" onTradeClick={() => handleTradeClick('USDT')} />
       </div>
 
       {/* Modal común para todas las tarjetas */}
       {isModalOpen && <Modal onClose={handleCloseModal} cardTitle={selectedCard} />}
     </div>
+    </body>
+
   );
 };
 

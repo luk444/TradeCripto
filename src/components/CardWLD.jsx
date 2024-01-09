@@ -69,7 +69,7 @@ const CardWLD = ({ title, currency, buttonColor, onTradeClick }) => {
           <button className="border-2 rounded-md px-2 mt-2">ARS</button>
         </div>
       </div>
-      <button className={`bg-${buttonColor} text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3`} onClick={handleTradeClick}>
+      <button className={`bg-${buttonColor} bg-[#fa8072] text-white px-4 py-2 rounded w-[120px] rounded-md font-medium my-6 mx-auto px-6 py-3`} onClick={handleTradeClick}>
         Tradear
       </button>
     </div>

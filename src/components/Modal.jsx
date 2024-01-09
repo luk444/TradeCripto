@@ -15,7 +15,7 @@ const Modal = ({ onClose, cardTitle }) => {
       // Obtener la información de la billetera según la tarjeta seleccionada
       setWalletInfo(getWalletInfoByCard(cardTitle));
       // Cambiar el texto después de cargar
-      setLoadingText('Wallet Generada');
+      setLoadingText(' ');
     }, 2000);
 
     return () => clearTimeout(timeout);
@@ -31,7 +31,7 @@ const Modal = ({ onClose, cardTitle }) => {
     } else if (cardTitle === 'WLD') {
       return { currency: 'WLD', walletAddress: '0x113a8428b051a6f277329998dc22fec819836aba' };
     } else if (cardTitle === 'USDT') {
-      return { currency: 'USDT', walletAddress: '0x113a8428b051a6f277329998dc22fec819836aba' };
+      return { currency: 'USDT', walletAddress:'0x113a8428b051a6f277329998dc22fec819836aba' };
     }
 
     return null;
@@ -49,6 +49,7 @@ const Modal = ({ onClose, cardTitle }) => {
     zIndex: '1000',
     fontFamily: 'Arial, sans-serif', // Cambia 'Arial, sans-serif' por tu fuente preferida
     fontWeight: 'bold', // Puedes cambiar 'bold' por 'normal' u otros valores numéricos como 400, 700, etc.
+    color: '#fa8072'
   };
 
   const bodyStyle = {
@@ -76,7 +77,7 @@ const Modal = ({ onClose, cardTitle }) => {
               {/* Nuevo campo de entrada (input) para alias o CVU */}
               <div className="mt-4">
                 <label htmlFor="aliasCvu" className="block text-sm font-medium text-gray-700">
-                  Ingrese Alias o CVU:
+                  Ingrese Alias/CBU/CVU:
                 </label>
                 <input
                   id="aliasCvu"
@@ -87,7 +88,7 @@ const Modal = ({ onClose, cardTitle }) => {
                 />
               </div>
               
-              <button className="btn bg-gray-500 text-white px-2 py-1 rounded-md mt-2" onClick={onClose}>
+              <button className="bg-[#fa8072] text-white px-2 py-1 rounded-md mt-2" onClick={onClose}>
                 Aceptar
               </button>
             </>
