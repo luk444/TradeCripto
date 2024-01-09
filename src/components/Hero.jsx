@@ -1,14 +1,8 @@
 import React from 'react';
 import Typed from 'react-typed';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const handleRedirect = () => {
-    const section3 = document.getElementById('seccion3');
-    if (section3) {
-      section3.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className='text-white'>
       <section id="seccion1"></section>
@@ -32,12 +26,13 @@ const Hero = () => {
           </p>
         </div>
         <p className='md:text-2xl text-xl font-bold text-gray-500'>Nos encargamos de analizar datos para aumentar los ingresos de las plataformas WLD, BTC y USDT.</p>
-        <button
+        {/* Utiliza Link en lugar de un botón para la redirección */}
+        <Link
+          to="/trade"
           className='bg-[#fa8072] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'
-          onClick={handleRedirect}
         >
           Comenzar
-        </button>
+        </Link>
       </div>
     </div>
   );

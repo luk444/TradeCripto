@@ -1,7 +1,7 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Analytics from "./components/Analytics";
 import Cards from "./components/Cards";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
@@ -9,10 +9,11 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Hero />
-      <Analytics />
-      <Cards />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/nosotros" element={<Analytics />} />
+        <Route path="/trade" element={<Cards />} />
+      </Routes>
     </div>
   );
 }
