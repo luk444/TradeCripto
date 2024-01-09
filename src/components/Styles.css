@@ -1,0 +1,41 @@
+/* Agrega esto en un archivo styles.css */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    font-family: 'Arial, sans-serif'; /* Cambia 'Arial, sans-serif' por tu fuente preferida */
+    font-weight: bold; /* Puedes cambiar 'bold' por 'normal' u otros valores numéricos como 400, 700, etc. */
+  }
+  
+  /* Otros estilos aquí según sea necesario */
+  
+  /* Styles.css */
+
+.modal-text {
+    font-size: 18px;
+    color: #333; /* color personalizado */
+  }
+  
+  .wallet-address {
+    font-size: 16px;
+    font-weight: normal;
+    color: #555; /* color personalizado */
+    text-align: center;
+    display: flex;
+  }
+  
+  .Wa {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .Ma{
+    margin-top: 30px;
+  }
+
+  .btn{
+    background-color: green;
+  }
