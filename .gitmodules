@@ -1,0 +1,3 @@
+[submodule "CriptoTrade"]
+    path = CriptoTrade
+    url = https://github.com/luk444/CriptoTrade.git
